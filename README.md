@@ -9,9 +9,13 @@ The client can request data by sending a message to the server.
 Example:
 
 context = zmq.Context()
+
 print("Connecting to server..")
+
 socket = context.socket(zmq.REQ)
+
 socket.connect("tcp://localhost:5555")
+
 socket.send(b"Updated currency")
 
 Recieving Data:
@@ -19,6 +23,7 @@ The client will recieve data by recieving a string back from the server.
 Example:
 
 the_data = socket.recv()
+
 print("Received: [%s]" % (the_data))
 
 UML sequence diagram:
